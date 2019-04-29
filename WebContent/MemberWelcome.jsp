@@ -48,7 +48,7 @@
 		<p class="text">
 			<%=I.getName()%></p>
 		<p class="text">
-			<%=I.getDescription()%></p>
+			<%=I.getSpeciality()%></p>
 		<p class="text">
 			Price:
 			<%=I.getPrice()%></p>

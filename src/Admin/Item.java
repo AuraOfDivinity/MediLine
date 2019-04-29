@@ -1,7 +1,7 @@
 package Admin;
 
 public class Item {
-	private String name, description, img;
+	private String name, description, img, username, password, speciality;
 	private float price;
 	
 	public String getName() {
@@ -27,6 +27,30 @@ public class Item {
 	}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public void setUsername(String username) {
+		this.username= username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password= password;
+	}
+	
+	public String getSpeciality() {
+		return speciality;
+	}
+	
+	public void setSpeciality(String speciality) {
+		this.speciality= speciality;
 	}
 	
 	

@@ -21,9 +21,12 @@ public class AddItem extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String name = request.getParameter("name");
+		String speciality = request.getParameter("speciality");
 		String description = request.getParameter("description");
 		Float price = Float.parseFloat(request.getParameter("price"));
 		String img = request.getParameter("img");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
 		
 		Item i = new Item();
 		
@@ -31,6 +34,9 @@ public class AddItem extends HttpServlet {
 		i.setDescription(description);
 		i.setPrice(price);
 		i.setImg(img);
+		i.setUsername(username);
+		i.setPassword(password);
+		i.setSpeciality(speciality);
 		
 		//Assigning values to the newly created item object
 		

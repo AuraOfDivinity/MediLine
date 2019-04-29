@@ -28,12 +28,15 @@ public class ItemDao {
 		try {
 			Connection con = ItemDao.getConnection();
 			PreparedStatement ps = con
-					.prepareStatement("insert into items(name, description, Img_url, price) values (?, ?, ?, ?)");
+					.prepareStatement("insert into items(name, description, Img_url, price, username, password, specialty) values (?, ?, ?, ?, ?, ?, ?)");
 
 			ps.setString(1, i.getName());
 			ps.setString(2, i.getDescription());
 			ps.setString(3, i.getImg());
 			ps.setFloat(4, i.getPrice());
+			ps.setString(5, i.getUsername());
+			ps.setString(6, i.getPassword());
+			ps.setString(7, i.getSpeciality());
 
 			status = ps.executeUpdate();
 			//the executeUpdate function returns the number of affected rows in the database
@@ -59,6 +62,7 @@ public class ItemDao {
 				I.setDescription(rs.getString(2));
 				I.setImg(rs.getString(3));
 				I.setPrice(rs.getFloat(4));
+				I.setSpeciality(rs.getString(8));
 
 				list.add(I);
 			}
@@ -83,6 +87,8 @@ public class ItemDao {
 			I.setDescription(rs.getString(2));
 			I.setImg(rs.getString(3));
 			I.setPrice(rs.getFloat(4));
+			I.setSpeciality(rs.getString(8));
+			
 						
 			con.close();
 			

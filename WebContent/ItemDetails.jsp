@@ -45,10 +45,11 @@
 					
 					
 					
-					<p class="card-text">Name: <%=i.getName() %></p>
-					<p class="card-text">Specialty: <%=i.getDescription() %></p>
-					<p class="card-text">Average cost per Appointment<%=i.getPrice() %></p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+					<p class="card-text"><strong>Name:</strong> <%=i.getName() %></p>
+					<p class="card-text"><strong>Specialty:</strong> <%=i.getSpeciality() %></p>
+					<p class="card-text"><strong>Description:</strong> <%=i.getDescription() %></p>
+					<p class="card-text"><strong>Average cost per Appointment: </strong><%=i.getPrice() %></p>
+					
 				</div>
 			</div>
 		</div>

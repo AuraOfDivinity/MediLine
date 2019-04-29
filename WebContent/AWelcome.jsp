@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Admin Dashboard</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -15,6 +15,7 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald"
 	rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <link href="AWelcome.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -31,7 +32,7 @@
 	%>
 
 	<div class="header">
-		<p>Availabe Items</p>
+		<p>Availabe Doctors</p>
 
 	</div>
 
@@ -47,7 +48,7 @@
 		<p class="text">
 			<%=I.getName()%></p>
 		<p class="text">
-			<%=I.getDescription()%></p>
+			<%=I.getSpeciality()%></p>
 		<p class="text">
 			Price:
 			<%=I.getPrice()%></p>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,54 +13,63 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lobster"
 	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
 <link href="A_AddItem.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-	
+
 	<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");	
-	
-		if(session.getAttribute("username")==null){
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
+		if (session.getAttribute("username") == null) {
 			response.sendRedirect("ALogin.html");
+		} else {
+	%><jsp:include page="ALoggedinmenu.html" />
+	<%
 		}
-		else{
-			%><jsp:include page="ALoggedinmenu.html"/><%
-		}
-	
 	%>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
 				<div id="content">
 					<h1>Add New Doctor</h1>
-					<br/>
+					<br />
 					<form action="AddItem" method="post">
-					<!-- Add item servlet gets called -->
+						<!-- Add item servlet gets called -->
 						<ul>
-							<li>Doctor name:  <input type="text" name="name" required="required"></li>
-							<br/>
-							<li>Doctor Speciality:  <input type="text" name="speciality" required="required"></li>
-							<br/>
-							<li>Doctor Description:  <input type="text" name="description" required="required"></li>
-							<br/>
-							<li>Doctor Price:  <input type="text" name="price" required="required"></li>
-							<br/>
-							<li>Image url:  <input type="text" name="img" required="required"></li>
-							<br/>
-							<li>Doctor Username:  <input type="text" name="username" required="required"></li>
-							<br/>
-							<li>Doctor Password:  <input type="text" name="password" required="required"></li>
-							<br/>
-							<button class="btn btn-default btn-lg" type="submit">Add Item</button>
+							<li>Doctor name: <input type="text" name="name"
+								required="required"></li>
+							<br />
+							<li>Doctor Speciality: <input type="text" name="speciality"
+								required="required"></li>
+							<br />
+							<li>Doctor Description: <input type="text"
+								name="description" required="required"></li>
+							<br />
+							<li>Doctor Price: <input type="text" name="price"
+								required="required"></li>
+							<br />
+							<li>Image url: <input type="text" name="img"
+								required="required"></li>
+							<br />
+							<li>Doctor Username: <input type="text" name="username"
+								required="required"></li>
+							<br />
+							<li>Doctor Password: <input type="text" name="password"
+								required="required"></li>
+							<br />
+							<button class="btn btn-default btn-lg" type="submit">Add
+								Doctor</button>
 						</ul>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
