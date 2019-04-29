@@ -1,0 +1,31 @@
+@charset "ISO-8859-1";
+
+body {
+	
+	background:linear-gradient(to right,rgba(255, 122, 122, 0.8), rgba(255, 50, 50, 0.8)), url(http://i66.tinypic.com/skye87.jpg);
+	background-size: cover;
+	background-position: center;
+	
+}
+
+#content{
+	padding-top:17%;
+	text-align:center;
+	color:#fff;
+	font-family: 'Lobster', cursive;
+}
+
+form{
+	font-size:1.5em;
+}
+
+ul li{
+	list-style:none;
+	font-family: 'Lato', sans-serif;
+}
+
+
+.btn-default:hover{
+	background-color: black;
+	color: white;
+}

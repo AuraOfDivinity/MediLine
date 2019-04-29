@@ -1,0 +1,57 @@
+@charset "ISO-8859-1";
+
+
+
+body{
+	background: url("http://i64.tinypic.com/5dq9o8.jpg");
+}
+
+.header{
+	width: 100%;
+	height: 20%;
+	font-family: 'Lobster', cursive;;
+	text-align: center;
+	font-size: 2em;
+	color: white;
+	padding-top: 30px;
+}
+
+/*.box{
+	display:grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1em;
+}
+*/
+
+.box{	
+	width:25%;
+	height:30%;
+	float:left;
+	padding:10px;
+	
+} 
+
+.box img{
+	width:100%;
+}
+
+.text{
+	margin-bottom: -5px;
+	color: white;
+	text-align:center;
+	font-family: 'Oswald', sans-serif;
+	
+}
+
+.box a:hover{
+	text-decoration:none;
+	color: white !important;
+}
+
+.box a{
+	color:#dc3545 !important;
+}
+
+dic{
+	border:1px solid black;
+}
