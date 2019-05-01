@@ -54,7 +54,7 @@
 			<%=I.getPrice()%></p>
 
 		
-		<!-- 	<button type="button" class="btn btn-outline-success btn-sm" onclick="message()"><a href="AddToCart?param1=<%=I.getName()%>&param2=<%=I.getDescription()%>&param3=<%=I.getPrice()%>">More Info</a></button> -->
+		<button type="button" class="btn btn-outline-success btn-sm" onclick="message()"><a href="AddToCart?param1=<%=I.getName()%>&param2=<%=I.getDescription()%>&param3=<%=I.getPrice()%>">More Info</a></button>
 			<button type="button" class="btn btn-outline-success btn-sm"><a href="RedirectItem?param1=<%=I.getName()%>">More Info</a></button>
 		<script>
 			function message(){

@@ -123,4 +123,49 @@ public class ItemDao {
 		}
 		
 	}
+	
+	public static boolean checkCredentials(String uname, String pass) {
+		try {
+			System.out.println("IN CHECKCREDENTIALS Passed in values:"+uname+"    "+pass);
+			Connection con = ItemDao.getConnection();
+			PreparedStatement pst = con.prepareStatement("select * from items where username =? and password = ?");
+			pst.setString(1, uname);
+			pst.setString(2, pass);
+
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+	
+	public static Item getItemByUsername(String s) {
+		Item I = new Item();
+		try {
+			Connection con = ItemDao.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from items where username =?");
+			ps.setString(1, s);
+			ResultSet rs = ps.executeQuery();
+			
+			rs.next();
+			I.setName(rs.getString(1));
+			I.setDescription(rs.getString(2));
+			I.setImg(rs.getString(3));
+			I.setPrice(rs.getFloat(4));
+			I.setSpeciality(rs.getString(8));
+			
+						
+			con.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return I;
+	}
 }

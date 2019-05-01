@@ -15,6 +15,8 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster"
 	rel="stylesheet">
 <link href="DoctorLogin.css" type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="Menu_normal.html" />
@@ -24,9 +26,11 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div id="content">
-					<h1>Doctor's Login Portal</h1>
+					<div id="header">
+						<h1>Doctor's Login Portal</h1>
+					</div>
 					<br />
-					<form action="Login" method="get">
+					<form action="ItemLogin" method="get">
 						<ul>
 							<li>Username: <input type="text" name="uname"
 								required="required"></li>

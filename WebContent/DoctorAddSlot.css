@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+#content{
+	padding-top: 8%;
+	text-align:center;
+	color:#fff;
+	font-family: 'Lobster', cursive;
+	
+	
+}
+
+form{
+	font-size:1.5em;
+}
+
+ul li{
+	list-style:none;
+	font-family: 'Lato', sans-serif;
+}
+
+
+.btn-default:hover{
+	background-color: black;
+	color: white;
+}
+
+body{
+	background: url("http://i64.tinypic.com/5dq9o8.jpg");
+}
+
+#AddForm{
+	background:#fff;
+	margin: 0 auto;
+	width: 40em;
+}
+
+#title{
+	font-family:'Montserrat', cursive;
+}
+
+#topcontent{
+	font-family:'Montserrat', cursive;
+	font-size: 0.8em;
+}
