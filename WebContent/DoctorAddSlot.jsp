@@ -29,6 +29,7 @@
 		if (session.getAttribute("username") == null) {
 			response.sendRedirect("DoctorLogin.jsp");
 		} else {
+			System.out.println(session.getAttribute("username"));
 	%><jsp:include page="DoctorMenu.html" />
 	<%
 		}
@@ -37,7 +38,7 @@
 
 	<div class="container">
 		<div id="AddForm">
-			<form class="text-center border border-light p-5">
+			<form action="AddAppointment" method ="post" class="text-center border border-light p-5" >
 
 				<p class="h4 mb-4">
 					<span id="title">New Channeling Slot</span>
@@ -58,7 +59,7 @@
 					name="time"> <input type="text" class="form-control mb-4"
 					placeholder="Price" name="price">
 
-
+				 <input type="text"  class="form-control mb-4 disabled"  name="doctor" value="<%=session.getAttribute("username")%>">>
 				<!-- Sign in button -->
 
 				<button class="btn btn-info btn-block" type="submit">Submit</button>

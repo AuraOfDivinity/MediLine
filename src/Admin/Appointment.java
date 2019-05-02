@@ -1,7 +1,13 @@
 package Admin;
 
 public class Appointment {
-	private String hospital, time, state, patient;
+	private String hospital, time, state, patient, doctor;
+	public String getDoctor() {
+		return doctor;
+	}
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
 	private float price;
 	
 	public String getHospital() {

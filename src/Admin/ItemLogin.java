@@ -26,6 +26,7 @@ public class ItemLogin extends HttpServlet {
 		if(ItemDao.checkCredentials(uname, pass)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
+			
 			response.sendRedirect("DoctorHome.jsp");
 			Item i = ItemDao.getItemByUsername(uname);
 			ItemDao.setPreparedItem(i);
