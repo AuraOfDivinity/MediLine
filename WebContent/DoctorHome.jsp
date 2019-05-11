@@ -19,7 +19,8 @@
 	href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans"
 	rel="stylesheet">
 <link href="DoctorHome.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -36,6 +37,7 @@
 
 	<%
 		Item i = ItemDao.getPreparedItem();
+		Item appointmentItem = ItemDao.getItemByUsername(session.getAttribute("username").toString());
 	%>
 	<div class="row">
 		<div class="col-sm-4">
@@ -61,52 +63,111 @@
 						<%=i.getDescription()%></p>
 					<p class="card-text">
 						<strong>Average cost per Appointment: </strong><%=i.getPrice()%></p>
-					</span>
-					
-					<a href="#" class="btn btn-warning" >Edit Profile  <i class="fa fa-edit"></i></a>
-					<a href="#" class="btn btn-danger" >Delete Profile  <i class="fa fa-user-times"></i></a>
+					</span> <a href="#" class="btn btn-warning">Edit Profile <i
+						class="fa fa-edit"></i></a> <a href="#" class="btn btn-danger">Delete
+						Profile <i class="fa fa-user-times"></i>
+					</a>
 
 				</div>
 			</div>
 		</div>
+		<%@ page import="java.util.List"%>
+		<%@ page import="Admin.*"%>
+		<%@ page import="Member.*"%>
+
 		<div class="col-sm-8">
 			<div class="col-sm-12">
 				<div class="card" style="margin: 2em">
 					<div class="card-body">
-						<h5 class="card-title">Appointments to confirm</h5>
-						<p class="card-text">With supporting text below as a natural
-							lead-in to additional content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+						<h5 class="card-title">Created Appointment Slots</h5>
+						<div class="row">
+						<%
+							List<Appointment> list = AppointmentDao.getAvailAppointments(session.getAttribute("username").toString());
+
+							//For each loop to loop though the items in list arraylist
+							for (Appointment A : list) {
+						%>
+						
+							<div class="col-sm-3">
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title"><strong>Appointment</strong></h5>
+										<p class="card-text">
+											Hospital:
+											<%=A.getHospital()%></p>
+										<p class="card-text">
+											Time:
+											<%=A.getTime()%></p>
+										<p class="card-text">
+											Price:
+											<%=A.getPrice()%></p>
+										<a href="SetStateConfirm?param1=<%=A.getHospital()%>&param2=<%=A.getTime()%>" class="btn btn-warning">Edit</a>
+										<a href="DeleteAppointment?hospital=<%=A.getHospital()%>&time=<%=A.getTime()%>" class="btn btn-danger">Delete</a>
+									</div>
+								</div>
+							</div>
+							<%
+								}
+							%>
+
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="card" style="margin: 2em">
+						<div class="card-body">
+							<h5 class="card-title">Confirmed appointments</h5>
+							<div class="row">
+						<%
+							List<Appointment> list1 = AppointmentDao.getConfAppointments(session.getAttribute("username").toString());
+
+							//For each loop to loop though the items in list arraylist
+							for (Appointment A : list1) {
+						%>
+						
+							<div class="col-sm-3">
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title"><strong>Appointment</strong></h5>
+										<p class="card-text">
+											Hospital:
+											<%=A.getHospital()%></p>
+										<p class="card-text">
+											Time:
+											<%=A.getTime()%></p>
+										<p class="card-text">
+											Price:
+											<%=A.getPrice()%></p>
+										<a href="DeleteAppointment?hospital=<%=A.getHospital()%>&time=<%=A.getTime()%>" class="btn btn-danger">Cancel</a>
+									</div>
+								</div>
+							</div>
+							<%
+								}
+							%>
+
+						</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-12">
-				<div class="card" style="margin: 2em">
-					<div class="card-body">
-						<h5 class="card-title">Upcoming appointments</h5>
-						<p class="card-text">With supporting text below as a natural
-							lead-in to additional content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
-			</div>
+
 		</div>
 
-	</div>
 
 
 
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
 </body>
 </html>
