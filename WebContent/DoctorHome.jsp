@@ -63,7 +63,7 @@
 						<%=i.getDescription()%></p>
 					<p class="card-text">
 						<strong>Average cost per Appointment: </strong><%=i.getPrice()%></p>
-					</span> <a href="#" class="btn btn-warning">Edit Profile <i
+					</span> <a href="DoctorEditProfile.jsp" class="btn btn-warning">Edit Profile <i
 						class="fa fa-edit"></i></a> <a href="#" class="btn btn-danger">Delete
 						Profile <i class="fa fa-user-times"></i>
 					</a>
