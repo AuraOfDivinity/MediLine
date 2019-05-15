@@ -94,10 +94,10 @@
 											href="SetStateConfirm?param1=<%=A.getHospital()%>&param2=<%=A.getTime()%>"
 											class="btn btn-success">Purchase</a> -->
 										<a
-											href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>"
+											href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>&param4=<%=A.getTime()%>"
 											class="btn btn-success">Add to cart</a>
 
-										<!-- <button type="button" class="btn btn-outline-success btn-sm" onclick="message()"><a href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>">More Info</a></button> -->
+										<!-- <button type="button" class="btn btn-outline-success btn-sm" onclick="message()"><a href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>&param4=<%=A.getTime()%>">More Info</a></button> -->
 									</div>
 								</div>
 							</div>

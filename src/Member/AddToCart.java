@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.JspWriter;
 
+import Admin.AppointmentDao;
+
 /**
  * Servlet implementation class AddToCart
  */
@@ -51,8 +53,11 @@ public class AddToCart extends HttpServlet {
 		String newItem = request.getParameter("param1");
 		String newDesc = request.getParameter("param2");
 		float newPrice = Float.parseFloat(request.getParameter("param3"));
+		String time = request.getParameter("param4");
 		
 		
+		System.out.println("In addtocart with values"+newDesc+" "+time);
+		AppointmentDao.updateStatusConfirmed(time, newDesc);
 		
 		if(newItem != null) {
 			cartItems.add(newItem);
