@@ -20,6 +20,7 @@ public class mlogin extends HttpServlet {
 		if(MemberDao.checkCredentials(uname, pass)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
+			session.setAttribute("LoggedInAs", "Member");
 			response.sendRedirect("MemberWelcome.jsp");
 		}
 		else {

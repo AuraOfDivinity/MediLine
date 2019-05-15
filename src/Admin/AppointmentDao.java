@@ -93,6 +93,22 @@ public class AppointmentDao {
 		}
 
 	}
+	
+	public static void updateStatusAvilable(String time, String hospital) {
+		try {
+			Connection con = AppointmentDao.getConnection();
+			PreparedStatement ps = con
+					.prepareStatement("update appointments set state = 'AVAILABLE' where time = ? and hospital = ?");
+			ps.setString(1, time);
+			ps.setString(2, hospital);
+
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public static List<Appointment> getConfAppointments(String doctor) {
 		List<Appointment> list = new ArrayList<Appointment>();

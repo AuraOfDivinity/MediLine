@@ -87,6 +87,7 @@ public class ItemDao {
 			I.setDescription(rs.getString(2));
 			I.setImg(rs.getString(3));
 			I.setPrice(rs.getFloat(4));
+			I.setUsername(rs.getString(6));
 			I.setSpeciality(rs.getString(8));
 			
 						

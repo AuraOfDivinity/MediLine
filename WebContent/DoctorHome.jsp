@@ -117,7 +117,7 @@
 				<div class="col-sm-12">
 					<div class="card" style="margin: 2em">
 						<div class="card-body">
-							<h5 class="card-title">Confirmed appointments</h5>
+							<h5 class="card-title">Your Confirmed Appointments</h5>
 							<div class="row">
 						<%
 							List<Appointment> list1 = AppointmentDao.getConfAppointments(session.getAttribute("username").toString());

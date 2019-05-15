@@ -33,33 +33,121 @@
 	<%
 		}
 	%>
-	<% Item i = ItemDao.getPreparedItem(); %>
+	<%
+		Item i = ItemDao.getPreparedItem();
+	%>
 	<div class="row">
 		<div class="col-sm-4">
-			<div class="card" style="margin:2em">
-				<img class="card-img-top" src="<%=i.getImg() %>" alt="doctor img" style=" padding: 30px; margin:auto; border-radius: 5%">
+			<div class="card" style="margin: 2em">
+				<img class="card-img-top" src="<%=i.getImg()%>" alt="doctor img"
+					style="padding: 30px; margin: auto; border-radius: 5%">
 				<div class="card-body">
 					<h5 class="card-title">Profile</h5>
-					
+
 					<%@ page import="Admin.*"%>
-					
-					
-					
-					<p class="card-text"><strong>Name:</strong> <%=i.getName() %></p>
-					<p class="card-text"><strong>Specialty:</strong> <%=i.getSpeciality() %></p>
-					<p class="card-text"><strong>Description:</strong> <%=i.getDescription() %></p>
-					<p class="card-text"><strong>Average cost per Appointment: </strong><%=i.getPrice() %></p>
-					
+					<%@ page import="java.util.List"%>
+					<%@ page import="Member.*"%>
+
+
+					<p class="card-text">
+						<strong>Name:</strong>
+						<%=i.getName()%></p>
+					<p class="card-text">
+						<strong>Specialty:</strong> <span class="badge badge-primary"><%=i.getSpeciality()%>
+							<p class="card-text">
+								<strong>Description:</strong>
+								<%=i.getDescription()%></p>
+							<p class="card-text">
+								<strong>Average cost per Appointment: </strong><%=i.getPrice()%></p>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-8">
-			<div class="card" style="margin:2em">
-				<div class="card-body" >
-					<h5 class="card-title">Available Appointments</h5>
-					<p class="card-text">With supporting text below as a natural
-						lead-in to additional content.</p>
-					<a href="#" class="btn btn-primary">Go somewhere</a>
+			<div class="col-sm-12">
+				<div class="card" style="margin: 2em">
+					<div class="card-body">
+						<h5 class="card-title">Available Appointment Slots</h5>
+						<div class="row">
+							<%
+								List<Appointment> list = AppointmentDao.getAvailAppointments(session.getAttribute("doctorName").toString());
+
+								//For each loop to loop though the items in list arraylist
+								for (Appointment A : list) {
+							%>
+
+							<div class="col-sm-3">
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">
+											<strong>Appointment</strong>
+										</h5>
+										<p class="card-text">
+											Hospital:
+											<%=A.getHospital()%></p>
+										<p class="card-text">
+											Time:
+											<%=A.getTime()%></p>
+										<p class="card-text">
+											Price:
+											<%=A.getPrice()%></p>
+										<!-- <a
+											href="SetStateConfirm?param1=<%=A.getHospital()%>&param2=<%=A.getTime()%>"
+											class="btn btn-success">Purchase</a> -->
+										<a
+											href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>"
+											class="btn btn-success">Add to cart</a>
+
+										<!-- <button type="button" class="btn btn-outline-success btn-sm" onclick="message()"><a href="AddToCart?param1=<%=A.getDoctor()%>&param2=<%=A.getHospital()%>&param3=<%=A.getPrice()%>">More Info</a></button> -->
+									</div>
+								</div>
+							</div>
+							<%
+								}
+							%>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="card" style="margin: 2em">
+					<div class="card-body">
+						<h5 class="card-title">Confirmed appointments</h5>
+						<div class="row">
+							<%
+								List<Appointment> list1 = AppointmentDao.getConfAppointments(session.getAttribute("doctorName").toString());
+
+								//For each loop to loop though the items in list arraylist
+								for (Appointment A : list1) {
+							%>
+
+							<div class="col-sm-3">
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">
+											<strong>Appointment</strong>
+										</h5>
+										<p class="card-text">
+											Hospital:
+											<%=A.getHospital()%></p>
+										<p class="card-text">
+											Time:
+											<%=A.getTime()%></p>
+										<p class="card-text">
+											Price:
+											<%=A.getPrice()%></p>
+										<a
+											href="SetStateAvailable?param1=<%=A.getHospital()%>&param2=<%=A.getTime()%>"
+											class="btn btn-danger">Cancel</a>
+									</div>
+								</div>
+							</div>
+							<%
+								}
+							%>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

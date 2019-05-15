@@ -31,6 +31,7 @@ public class Login extends HttpServlet {
 		if(dao.checkCredentials(uname, pass)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", uname);
+			session.setAttribute("LoggedInAs", "Admin");
 			response.sendRedirect("AWelcome.jsp");
 		}
 		

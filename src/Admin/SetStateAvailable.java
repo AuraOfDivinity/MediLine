@@ -8,23 +8,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SetStateConfirm
+ * Servlet implementation class SetStateAvailable
  */
-@WebServlet("/SetStateConfirm")
-public class SetStateConfirm extends HttpServlet {
+@WebServlet("/SetStateAvailable")
+public class SetStateAvailable extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public SetStateConfirm() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SetStateAvailable() {
         super();
 
     }
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String hospital = request.getParameter("param1");
 		String time = request.getParameter("param2");
 		
-		AppointmentDao.updateStatusConfirmed(time, hospital);
-		
+		AppointmentDao.updateStatusAvilable(time, hospital);
 		response.sendRedirect("ItemDetails.jsp");
 	}
 

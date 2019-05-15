@@ -33,7 +33,7 @@
 
 			<div class="Question">
 
-				<p class="QText">What services does Laundry Bros provides?</p>
+				<p class="QText">What services does MediLine provides?</p>
 				<div id ="icoe1" onclick = "Expand1()">
 					<i class="fas fa-plus-circle"></i>
 				</div>
@@ -41,13 +41,13 @@
 					<i class="fas fa-minus-circle"></i>
 				</div>
 				<div id="A1Text" style= "display: none;">
-					<p>We at Laundry Bros provide comprehensive Laundry services such as Wash & press, Steam Press and dry cleaning.</p>
+					<p>We at MediLine medicare services  provide e channeling services intended to make your life much easier.</p>
 				</div>
 
 			</div>
 			
 			<div class="Question">
-				<p class="QText">Do I need to separate my laundry?</p>
+				<p class="QText">How can I make an appointment/appointments?</p>
 				<div id ="icoe2" onclick = "Expand2()">
 					<i class="fas fa-plus-circle"></i>
 				</div>
@@ -55,12 +55,12 @@
 					<i class="fas fa-minus-circle"></i>
 				</div>
 				<div id="A2Text" style= "display: none;">
-					<p>There is no need to separate your colors and whites. We will do that for you. You should, however, be sure that your socks are not balled up, and that there aren't clothes inside of clothes, such as two shirts that you took off together, or shorts and sweats that came off together. These oversights will prevent your clothes from getting their cleanest and may result in color runs. We also suggest that women use garment bags for their bras and underwear to prevent damage and potential loss from the laundry machines (due to some of these garments being so small).</p>
+					<p>All you have to do is search for the doctor, using the search facility provided on this web site. After selecting the required session of the doctor, you have to give details of the patient and make the payments to confirm the appointment. You will need a credit card to make the payment; any Visa, Master card or American Express credit card is accepted. When you reach the payment page in this web site, you should select the relevant Internet Payment Gateway (IPG), either Sampath bank, HSBC or Seylan bank for Visa and Master card to process the payment. Thereafter, from this web site, you will be connected to the payment gateways of either Sampath bank , HSBC or Seylan bank, or to the payment gateway of American Express where you can enter credit card details securely to pay for the appointment. The web site will present you with the receipt you should print, to be produced at the hospital. If there's no printer available you can just write down the reference number and go to the hospital. You can obtain the channel receipt from the channeling counter.</p>
 				</div>
 			</div>
 			
 			<div class="Question">
-				<p class="QText">How can I be sure that nothing is missing?</p>
+				<p class="QText">Can I make payments in cash if I channel through the bank ?</p>
 				<div id ="icoe3" onclick = "Expand3()">
 					<i class="fas fa-plus-circle"></i>
 				</div>
@@ -68,12 +68,12 @@
 					<i class="fas fa-minus-circle"></i>
 				</div>
 				<div id="A3Text" style= "display: none;">
-					<p>We weigh the clothes when we receive them (to the tenth of the pound) and we weigh them when they are completed, so we always know when there is a problem in the system. We use a sophisticated bar-coding system to keep track of laundry throughout the process. We also wash and dry all of our customers' stuff individually (never mixing customers' laundry). To further insure against any laundry mix-ups, and to maintain the highest standard in service, we utilize a video surveillance system that watches all of the clothing as it moves through our laundry system. If you think something is missing, you can tell us and we will immediately investigate. However, all claims of missing clothes must be made within three days of laundry delivery or we will not be liable.</p>
+					<p>Please go to the nearest Sampath bank branch or the Peoples bank branch and channel the doctor of your choice. You can make payments in cash to the teller and obtain a receipt for your channel appointment. If you have an account at Sampath bank or Peoples bank, you can also charge the payment to your account with the bank.</p>
 				</div>
 			</div>
 			
 			<div class="Question">
-				<p class="QText">What are your service timings?</p>
+				<p class="QText">How can I get technical support for channeling through the internet ?</p>
 				<div id ="icoe4" onclick = "Expand4()">
 					<i class="fas fa-plus-circle"></i>
 				</div>
@@ -81,12 +81,12 @@
 					<i class="fas fa-minus-circle"></i>
 				</div>
 				<div id="A4Text" style= "display: none;">
-					<p>We work on all days of the week (except public holidays) </p>
+					<p>If you have encountered any difficulties using this web site, please call 0712345678 between 8.30 a.m. to 5.00 p.m.  </p>
 				</div>
 			</div>
 			
 			<div class="Question">
-				<p class="QText">What if my clothes are heavily stained?</p>
+				<p class="QText">How do I cancel an appointment that I have made on the internet or at the bank ?</p>
 				<div id ="icoe5" onclick = "Expand5()">
 					<i class="fas fa-plus-circle"></i>
 				</div>
@@ -94,22 +94,11 @@
 					<i class="fas fa-minus-circle"></i>
 				</div>
 				<div id="A5Text" style= "display: none;">
-					<p>In case of tough stains, we would recommend you to use our stain removal or dry cleaning service.</p>
+					<p>An appointment can be cancelled by Logging into your user profile and clicking on the cancel button of the respective appointment</p>
 				</div>
 			</div>
 			
-			<div class="Question">
-				<p class="QText">What if my clothes are heavily stained?</p>
-				<div id ="icoe6" onclick = "Expand6()">
-					<i class="fas fa-plus-circle"></i>
-				</div>
-				<div id ="icoc6" onclick = "Collapse6()" style="display: none;">
-					<i class="fas fa-minus-circle"></i>
-				</div>
-				<div id="A6Text" style= "display: none;">
-					<p>You can call us on +94-777233483 or write to us on contact@laundrybros.com</p>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 	<script>
