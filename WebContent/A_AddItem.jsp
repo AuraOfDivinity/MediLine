@@ -39,16 +39,15 @@
 					<form action="AddItem" method="post">
 						<!-- Add item servlet gets called -->
 						<ul>
-							<li>Doctor name: <input type="text" name="name"
+							<li>Doctor name: <input type="text" name="name" pattern = "\^.{1,20}$\" title="The name should only contain 20 letters"
 								required="required"></li>
 							<br />
-							<li>Doctor Speciality: <input type="text" name="speciality"
-								required="required"></li>
+							<li>Doctor Speciality: <input type="text" name="speciality" required pattern="\^[a-zA-Z]+$\" title="Speciality can only contain letters"></li>
 							<br />
-							<li>Doctor Description: <input type="text"
+							<li>Doctor Description: <input type="text" pattern = "\^.{1,500}$\" title="The description] should only contain 500 letters"
 								name="description" required="required"></li>
 							<br />
-							<li>Doctor Price: <input type="text" name="price"
+							<li>Doctor Price: <input type="number" name="price"
 								required="required"></li>
 							<br />
 							<li>Image url: <input type="text" name="img"
@@ -57,7 +56,7 @@
 							<li>Doctor Username: <input type="text" name="username"
 								required="required"></li>
 							<br />
-							<li>Doctor Password: <input type="text" name="password"
+							<li>Doctor Password: <input type="password" name="password" pattern="\^.{7,50}$\" title="Password must be 7 -50 characters long!"
 								required="required"></li>
 							<br />
 							<button class="btn btn-default btn-lg" type="submit">Add

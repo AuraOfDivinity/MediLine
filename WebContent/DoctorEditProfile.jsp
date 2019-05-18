@@ -19,6 +19,10 @@
 </head>
 <body>
 
+	<%@ page import="java.util.List"%>
+		<%@ page import="Admin.*"%>
+		<%@ page import="Member.*"%>
+
 	<%
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 
@@ -40,10 +44,15 @@
 						<div class="col-lg-6">
 							<form action="EditDoctor" method="post">
 								<!-- Add item servlet gets called -->
-								<p style ="font-size: 0.75em;">Fill in the fields with the new values and submit!</p>
+								<p style="font-size: 0.75em;">Fill in the fields with the
+									new values and submit!</p>
 								<ul>
-									<li>Doctor Username:
-									<input disabled type="text" class="form-control" name="name"
+									<%
+										Item i = ItemDao.getPreparedItem();
+									%>
+
+									<li>Doctor Username: <input type="text"
+										class="form-control" name="username"
 										value="<%=session.getAttribute("username")%>"></li>
 									<br />
 									<li>Doctor Speciality: <input type="text"
@@ -52,7 +61,7 @@
 									<li>Doctor Description: <input type="text"
 										class="form-control" name="description"></li>
 									<br />
-									<li>Doctor Price: <input type="text" name="price"
+									<li>Doctor Price: <input type="number" name="price"
 										class="form-control"></li>
 									<br />
 									<li>Image url: <input type="text" name="img"

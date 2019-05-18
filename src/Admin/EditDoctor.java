@@ -20,7 +20,7 @@ public class EditDoctor extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
+		String name = request.getParameter("username");
 		String speciality = request.getParameter("speciality");
 		String description = request.getParameter("description");
 		Float price = Float.parseFloat(request.getParameter("price"));
@@ -36,7 +36,7 @@ public class EditDoctor extends HttpServlet {
 		
 		ItemDao.editItem(i);
 		
-		System.out.println("IN EDIT ITEM with"+i.getUsername());
+		System.out.println("IN EDIT ITEM with"+name);
 		response.sendRedirect("DoctorHome.jsp");
 	}
 }
