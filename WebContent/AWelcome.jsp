@@ -57,8 +57,6 @@
 			<button type="button" class="btn btn-outline-danger btn-sm"><a href="delete?param1=<%=I.getName()%>">Delete</a></button>
 		
 		
-			<button type="button" class="btn btn-outline-warning btn-sm makeshift">Edit</button>
-		
 	</div>
 	<%
 		}

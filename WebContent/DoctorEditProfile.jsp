@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Doctor</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -15,7 +15,7 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat"
 	rel="stylesheet">
-<link href="A_AddItem.css" type="text/css" rel="stylesheet">
+<link href="DoctorEditProfile.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,34 +36,34 @@
 				<div id="content">
 					<h1>Edit Profile</h1>
 					<br />
-					<form action="AddItem" method="post">
-						<!-- Add item servlet gets called -->
-						<ul>
-							<li>Doctor name: <input type="text" name="name"
-								required="required"></li>
-							<br />
-							<li>Doctor Speciality: <input type="text" name="speciality"
-								required="required"></li>
-							<br />
-							<li>Doctor Description: <input type="text"
-								name="description" required="required"></li>
-							<br />
-							<li>Doctor Price: <input type="text" name="price"
-								required="required"></li>
-							<br />
-							<li>Image url: <input type="text" name="img"
-								required="required"></li>
-							<br />
-							<li>Doctor Username: <input type="text" name="username"
-								required="required"></li>
-							<br />
-							<li>Doctor Password: <input type="text" name="password"
-								required="required"></li>
-							<br />
-							<button class="btn btn-default btn-lg" type="submit">Add
-								Doctor</button>
-						</ul>
-					</form>
+					<div id="frm">
+						<div class="col-lg-6">
+							<form action="EditDoctor" method="post">
+								<!-- Add item servlet gets called -->
+								<p style ="font-size: 0.75em;">Fill in the fields with the new values and submit!</p>
+								<ul>
+									<li>Doctor Username:
+									<input disabled type="text" class="form-control" name="name"
+										value="<%=session.getAttribute("username")%>"></li>
+									<br />
+									<li>Doctor Speciality: <input type="text"
+										class="form-control" name="speciality"></li>
+									<br />
+									<li>Doctor Description: <input type="text"
+										class="form-control" name="description"></li>
+									<br />
+									<li>Doctor Price: <input type="text" name="price"
+										class="form-control"></li>
+									<br />
+									<li>Image url: <input type="text" name="img"
+										class="form-control"></li>
+									<br />
+									<button class="btn btn-default btn-lg" type="submit"
+										class="form-control">Edit Doctor</button>
+								</ul>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

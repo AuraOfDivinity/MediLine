@@ -9,7 +9,7 @@ body{
 
 .header{
 	height:100vh;
-	background-image:linear-gradient(to right ,rgba(155, 193, 255, 0.8), rgba(0, 73, 193, 0.8)), url("https://images.unsplash.com/photo-1481495278953-0967c9759b78?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4db1b29cf02094b71d54212d4e7a507f&auto=format&fit=crop&w=1951&q=80");
+	background-image: url("http://i65.tinypic.com/30mqxrn.png");
 	background-size: cover;
 	font-family: 'Lobster', cursive;
 	

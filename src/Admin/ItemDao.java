@@ -150,7 +150,7 @@ public class ItemDao {
 		Item I = new Item();
 		try {
 			Connection con = ItemDao.getConnection();
-			PreparedStatement ps = con.prepareStatement("select * from items where username =?");
+			PreparedStatement ps = con.prepareStatement("select * from items where username = ?");
 			ps.setString(1, s);
 			ResultSet rs = ps.executeQuery();
 			
@@ -161,12 +161,30 @@ public class ItemDao {
 			I.setPrice(rs.getFloat(4));
 			I.setSpeciality(rs.getString(8));
 			
-						
+			
 			con.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return I;
+	}
+	
+	public static void editItem(Item i) {
+		try {
+			Connection con = ItemDao.getConnection();
+			PreparedStatement pst = con.prepareStatement("update items set description = ?, Img_url = ?, price = ?, specialty = ? where username = ?");
+			pst.setString(1, i.getDescription());
+			pst.setString(2, i.getImg());
+			pst.setFloat(3, i.getPrice());
+			pst.setString(4, i.getSpeciality());
+			pst.setString(5, i.getUsername());
+			pst.executeUpdate();
+			
+			con.close();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 }
