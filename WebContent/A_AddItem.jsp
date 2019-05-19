@@ -39,12 +39,12 @@
 					<form action="AddItem" method="post">
 						<!-- Add item servlet gets called -->
 						<ul>
-							<li>Doctor name: <input type="text" name="name" pattern = "\^.{1,20}$\" title="The name should only contain 20 letters"
-								required="required"></li>
+							<li>Doctor name: <input type="text" name="name" pattern="^[a-zA-Z]{0,20}$" title="Username must only contain 20 alphanumeric characters"
+								required></li>
 							<br />
-							<li>Doctor Speciality: <input type="text" name="speciality" required pattern="\^[a-zA-Z]+$\" title="Speciality can only contain letters"></li>
+							<li>Doctor Speciality: <input type="text" name="speciality" required pattern="^[a-zA-Z]{0,20}$" title="Speciality can only contain upto 50 alphanumeric characters and cannot contain special characters!"></li>
 							<br />
-							<li>Doctor Description: <input type="text" pattern = "\^.{1,500}$\" title="The description] should only contain 500 letters"
+							<li>Doctor Description: <input type="text" pattern="^[a-zA-Z0-9_ .,!@#$&()\\-`.+,]{0,500}$" title="Description must be less than 500 characters"
 								name="description" required="required"></li>
 							<br />
 							<li>Doctor Price: <input type="number" name="price"
@@ -53,11 +53,11 @@
 							<li>Image url: <input type="text" name="img"
 								required="required"></li>
 							<br />
-							<li>Doctor Username: <input type="text" name="username"
-								required="required"></li>
+							<li>Doctor Username: <input type="text" name="username" pattern="^[a-zA-Z0-9]{0,50}$" title="Username must only contain upto 50 alphanumeric characters"
+								required></li>
 							<br />
-							<li>Doctor Password: <input type="password" name="password" pattern="\^.{7,50}$\" title="Password must be 7 -50 characters long!"
-								required="required"></li>
+							<li>Doctor Password: <input type="password" name="password" pattern="^[a-zA-Z0-9]{7,50}$" title="Password must contain at least 7 alphanumeric characters and cannot contain special characters"
+								required></li>
 							<br />
 							<button class="btn btn-default btn-lg" type="submit">Add
 								Doctor</button>

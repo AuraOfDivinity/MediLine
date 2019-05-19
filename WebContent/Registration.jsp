@@ -67,14 +67,14 @@
 					<br/>
 					<form action="Registration" method="post">
 						<ul>
-							<li>First Name:  <input type="text" name="Fname" required="required"></li>
+							<li>First Name:  <input type="text" name="Fname" required pattern="^[a-zA-Z]{0,20}$" title="First Name must only contain 20 alphanumeric characters and cannot contain special characters"></li>
 							<br/>
-							<li>Last Name:  <input type="text" name="Lname" required="required"></li>
+							<li>Last Name:  <input type="text" name="Lname" required pattern="^[a-zA-Z]{0,20}$" title="Last Name must only contain 20 alphanumeric characters and cannot contain special characters"></li>
 							<br/>
 							
-							<li>Username:  <input type="text" name="Username" required="required"></li>
+							<li>Username:  <input type="text" name="Username" required pattern="^[a-zA-Z0-9]{7,20}$" title="Username must contain at least 7 characters and cannot be longer than 30"></li>
 							<br/>
-							<li>Password:  <input type="password" name="Password" required="required"></li>
+							<li>Password:  <input type="password" name="Password"  required pattern="^[a-zA-Z0-9]{7,20}$" title="Password must contain at least 7 characters and cannot be longer than 30"></li>
 							<br/>
 							<button class="btn btn-default btn-lg" type="submit">Register</button>
 						</ul>

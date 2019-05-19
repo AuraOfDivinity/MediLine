@@ -76,7 +76,7 @@
 								<li>Username:<input class="in" type="text" name="uname"></li>
 								<br />
 
-								<li>Password:<input class="in" type="text" name="pass"></li>
+								<li>Password:<input class="in" type="password" name="pass"></li>
 								<br />
 								<button class="btn btn-default btn-lg" type="submit">Login</button> <button class="btn btn-default btn-lg">Register</button>
 							</ul>

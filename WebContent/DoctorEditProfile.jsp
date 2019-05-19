@@ -53,12 +53,12 @@
 
 									<li>Doctor Username: <input type="text"
 										class="form-control" name="username"
-										value="<%=session.getAttribute("username")%>"></li>
+										value="<%=session.getAttribute("username")%>" pattern="[a-zA-Z0-9]+" title="Username must only contain 20 alphanumeric characters"></li>
 									<br />
-									<li>Doctor Speciality: <input type="text"
+									<li>Doctor Speciality: <input type="text" pattern="^[a-zA-Z]{0,20}$" title="Speciality can only contain upto 50 alphanumeric characters and cannot contain special characters!"
 										class="form-control" name="speciality"></li>
 									<br />
-									<li>Doctor Description: <input type="text"
+									<li>Doctor Description: <input type="text" pattern="^[a-zA-Z0-9_ .,!@#$&()\\-`.+,]{0,500}$" title="Description must be less than 500 characters"
 										class="form-control" name="description"></li>
 									<br />
 									<li>Doctor Price: <input type="number" name="price"
