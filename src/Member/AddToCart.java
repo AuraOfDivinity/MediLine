@@ -57,7 +57,8 @@ public class AddToCart extends HttpServlet {
 		
 		
 		System.out.println("In addtocart with values"+newDesc+" "+time);
-		AppointmentDao.updateStatusConfirmed(time, newDesc);
+		AppointmentDao n = new AppointmentDao();
+		n.updateStatusConfirmed(time, newDesc);
 		
 		if(newItem != null) {
 			cartItems.add(newItem);

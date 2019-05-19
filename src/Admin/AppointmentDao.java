@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppointmentDao {
+public class AppointmentDao implements AppointmentAPI{
 
 	public static Connection getConnection() {
 		Connection con = null;
@@ -25,7 +25,8 @@ public class AppointmentDao {
 
 	}
 
-	public static int addAppointment(Appointment a) {
+	@Override
+	public int addAppointment(Appointment a) {
 		int status = 0;
 
 		try {
@@ -51,7 +52,8 @@ public class AppointmentDao {
 		return status;
 	}
 
-	public static List<Appointment> getAvailAppointments(String doctor) {
+	@Override
+	public List<Appointment> getAvailAppointments(String doctor) {
 		List<Appointment> list = new ArrayList<Appointment>();
 
 		try {
@@ -78,7 +80,8 @@ public class AppointmentDao {
 		return list;
 	}
 
-	public static void updateStatusConfirmed(String time, String hospital) {
+	@Override
+	public void updateStatusConfirmed(String time, String hospital) {
 		try {
 			Connection con = AppointmentDao.getConnection();
 			PreparedStatement ps = con
@@ -94,7 +97,8 @@ public class AppointmentDao {
 
 	}
 	
-	public static void updateStatusAvilable(String time, String hospital) {
+	@Override
+	public void updateStatusAvilable(String time, String hospital) {
 		try {
 			Connection con = AppointmentDao.getConnection();
 			PreparedStatement ps = con
@@ -110,7 +114,8 @@ public class AppointmentDao {
 
 	}
 
-	public static List<Appointment> getConfAppointments(String doctor) {
+	@Override
+	public List<Appointment> getConfAppointments(String doctor) {
 		List<Appointment> list = new ArrayList<Appointment>();
 
 		try {
@@ -137,7 +142,8 @@ public class AppointmentDao {
 		return list;
 	}
 
-	public static void delete(String hospital, String time) {
+	@Override
+	public void delete(String hospital, String time) {
 
 		try {
 			Connection con = AppointmentDao.getConnection();

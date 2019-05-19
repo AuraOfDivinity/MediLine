@@ -69,7 +69,8 @@
 						<h5 class="card-title">Available Appointment Slots</h5>
 						<div class="row">
 							<%
-								List<Appointment> list = AppointmentDao.getAvailAppointments(session.getAttribute("doctorName").toString());
+								AppointmentDao n = new AppointmentDao();
+								List<Appointment> list = n.getAvailAppointments(session.getAttribute("doctorName").toString());
 
 								//For each loop to loop though the items in list arraylist
 								for (Appointment A : list) {
@@ -115,7 +116,8 @@
 						<h5 class="card-title">Confirmed appointments</h5>
 						<div class="row">
 							<%
-								List<Appointment> list1 = AppointmentDao.getConfAppointments(session.getAttribute("doctorName").toString());
+								
+								List<Appointment> list1 = n.getConfAppointments(session.getAttribute("doctorName").toString());
 
 								//For each loop to loop though the items in list arraylist
 								for (Appointment A : list1) {

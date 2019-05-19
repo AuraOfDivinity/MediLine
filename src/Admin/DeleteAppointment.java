@@ -26,7 +26,8 @@ public class DeleteAppointment extends HttpServlet {
 		String hospital = request.getParameter("hospital");
 		String time = request.getParameter("time");
 		
-		AppointmentDao.delete(hospital, time);
+		AppointmentDao n = new AppointmentDao();
+		n.delete(hospital, time);
 		
 		response.sendRedirect("DoctorHome.jsp");
 	}

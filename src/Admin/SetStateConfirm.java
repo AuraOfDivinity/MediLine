@@ -23,7 +23,8 @@ public class SetStateConfirm extends HttpServlet {
 		String hospital = request.getParameter("param1");
 		String time = request.getParameter("param2");
 		
-		AppointmentDao.updateStatusConfirmed(time, hospital);
+		AppointmentDao n = new AppointmentDao();
+		n.updateStatusConfirmed(time, hospital);
 		
 		response.sendRedirect("ItemDetails.jsp");
 	}

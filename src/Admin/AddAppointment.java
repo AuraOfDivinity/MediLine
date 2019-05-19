@@ -39,8 +39,10 @@ public class AddAppointment extends HttpServlet {
 		a.setState(state);
 
 		// Assigning values to the newly created item object
+		
+		AppointmentDao n = new AppointmentDao();
 
-		int status = AppointmentDao.addAppointment(a);
+		int status = n.addAppointment(a);
 
 		if (status > 0) {
 			response.sendRedirect("DoctorHome.jsp");

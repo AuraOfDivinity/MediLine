@@ -26,7 +26,8 @@ public class SetStateAvailable extends HttpServlet {
 		String hospital = request.getParameter("param1");
 		String time = request.getParameter("param2");
 		
-		AppointmentDao.updateStatusAvilable(time, hospital);
+		AppointmentDao n = new AppointmentDao();
+		n.updateStatusAvilable(time, hospital);
 		response.sendRedirect("ItemDetails.jsp");
 	}
 
